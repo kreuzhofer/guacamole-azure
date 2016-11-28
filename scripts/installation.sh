@@ -8,5 +8,8 @@ sudo apt-key adv \
 echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" | sudo tee /etc/apt/sources.list.d/docker.list
 sudo apt-get update
 sudo apt-get install linux-image-extra-$(uname -r) linux-image-extra-virtual
-
-               
+sudo apt-get install -y docker-engine
+sudo service docker start
+# run guacd
+sudo docker run --name some-guacd -d glyptodon/guacd
+sudo docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=PassW0rd! -d mysql:latest
