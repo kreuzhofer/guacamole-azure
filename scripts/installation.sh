@@ -13,3 +13,4 @@ sudo service docker start
 # run guacd
 sudo docker run --name some-guacd -d glyptodon/guacd
 sudo docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=PassW0rd! -d mysql:latest
+sudo docker run --rm glyptodon/guacamole /opt/guacamole/bin/initdb.sh --mysql > initdb.sql
