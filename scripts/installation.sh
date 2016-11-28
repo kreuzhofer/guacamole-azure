@@ -19,4 +19,4 @@ curl --url https://raw.githubusercontent.com/kreuzhofer/guacamole-azure/master/s
 sudo docker cp ./create-db.sql some-mysql:/
 sudo docker cp ./initdb.sql some-mysql:/
 sudo docker exec some-mysql sh -c 'exec mysql -u root -pPassW0rd! < /create-db.sql'
-sudo docker exec some-mysql sh -c 'exec mysql -u root -pPassW0rd! < /initdb.sql'
+sudo docker exec some-mysql sh -c 'exec mysql -u root -pPassW0rd! guacamole_db < /initdb.sql'
