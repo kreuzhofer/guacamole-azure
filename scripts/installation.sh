@@ -20,3 +20,10 @@ sudo docker cp ./create-db.sql some-mysql:/
 sudo docker cp ./initdb.sql some-mysql:/
 sudo docker exec some-mysql sh -c 'exec mysql -u root -pPassW0rd! < /create-db.sql'
 sudo docker exec some-mysql sh -c 'exec mysql -u root -pPassW0rd! guacamole_db < /initdb.sql'
+# connect guacamole to mysql and guacd and run the web frontend
+sudo docker run --name some-guacamole --link some-guacd:guacd \
+    --link some-mysql:mysql         \
+    -e MYSQL_DATABASE=guacamole_db  \
+    -e MYSQL_USER=guacamole_user    \
+    -e MYSQL_PASSWORD=some_password \
+    -d -p 8080:8080 glyptodon/guacamole
