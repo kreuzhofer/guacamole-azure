@@ -26,4 +26,4 @@ sudo docker run --name some-guacamole --link some-guacd:guacd \
     -e MYSQL_DATABASE=guacamole_db  \
     -e MYSQL_USER=guacamole_user    \
     -e MYSQL_PASSWORD=some_password \
-    -d -p 8080:8080 glyptodon/guacamole
+    -d -p 80:8080 glyptodon/guacamole
